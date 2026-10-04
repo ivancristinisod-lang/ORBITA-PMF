@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#050607">
+  <title>ÓRBITA — Founder Signal</title>
+  <style>
+    :root{--bg:#050607;--panel:#0d1114;--panel2:#11171b;--text:#f6f8f9;--muted:#97a3aa;--line:rgba(255,255,255,.10);--lime:#c8ff00;--cyan:#00c8ff;--green:#42ff84;--danger:#ff718a}
+    *{box-sizing:border-box}html{background:var(--bg)}body{margin:0;min-height:100vh;color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:radial-gradient(circle at 15% 10%,rgba(0,200,255,.12),transparent 28%),radial-gradient(circle at 85% 18%,rgba(200,255,0,.10),transparent 24%),linear-gradient(180deg,#040506,#080b0d);overflow-x:hidden}
+    .wrap{width:min(860px,calc(100% - 24px));margin:auto;padding:18px 0 48px}.top{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:16px}.brand{display:flex;align-items:center;gap:11px}.mark{width:46px;height:46px;border:1px solid rgba(0,200,255,.35);border-radius:50%;position:relative;box-shadow:0 0 0 8px rgba(200,255,0,.03),inset 0 0 20px rgba(0,200,255,.08)}.mark:before,.mark:after{content:"";position:absolute;border-radius:50%}.mark:before{width:8px;height:8px;background:var(--lime);top:4px;right:5px;box-shadow:0 0 13px var(--lime)}.mark:after{width:6px;height:6px;background:var(--cyan);bottom:6px;left:3px;box-shadow:0 0 12px var(--cyan)}.brand strong{display:block;letter-spacing:.12em;font-size:17px}.brand span{display:block;color:var(--muted);font-size:10px;letter-spacing:.14em;text-transform:uppercase;margin-top:3px}.status{font-size:11px;color:#d7e0e5;border:1px solid var(--line);padding:8px 10px;border-radius:999px;background:rgba(255,255,255,.03)}.status:before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 10px var(--green);margin-right:7px}
+    .hero,.card{border:1px solid var(--line);background:linear-gradient(145deg,rgba(15,19,22,.96),rgba(7,9,11,.92));border-radius:28px;box-shadow:0 24px 80px rgba(0,0,0,.30)}.hero{padding:clamp(24px,5vw,44px)}.kicker{color:var(--lime);font-size:11px;font-weight:900;letter-spacing:.18em;text-transform:uppercase}.hero h1{font-size:clamp(39px,8vw,70px);line-height:.96;letter-spacing:-.055em;margin:14px 0 17px}.lead{color:#c9d1d6;font-size:clamp(16px,2.4vw,20px);line-height:1.55;max-width:710px;margin:0}.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}.chip{border:1px solid var(--line);border-radius:999px;padding:8px 11px;color:#bac4ca;font-size:12px;background:rgba(255,255,255,.03)}
+    button{appearance:none;border:0;border-radius:14px;padding:14px 17px;font:inherit;font-weight:850;cursor:pointer}.primary{background:linear-gradient(90deg,var(--lime),#84ff00);color:#071000;box-shadow:0 10px 32px rgba(200,255,0,.15)}.secondary{background:#10161a;color:#edf2f4;border:1px solid var(--line)}.ghost{background:transparent;color:#aab5bb;border:1px solid var(--line)}.actions{margin-top:25px;display:flex;gap:10px;flex-wrap:wrap}.hidden{display:none!important}
+    .survey{margin-top:16px}.progress{display:flex;align-items:center;gap:12px;margin:0 2px 12px}.track{height:5px;flex:1;background:#14191c;border-radius:999px;overflow:hidden}.bar{height:100%;background:linear-gradient(90deg,var(--cyan),var(--lime));transition:width .25s}.count{color:var(--muted);font-size:11px;min-width:62px;text-align:right}.card{padding:clamp(20px,4.5vw,36px)}.step{font-size:11px;font-weight:900;letter-spacing:.16em;color:var(--cyan);text-transform:uppercase}.q{font-size:clamp(27px,5vw,43px);line-height:1.08;letter-spacing:-.035em;margin:11px 0 9px}.helper{color:var(--muted);font-size:14px;line-height:1.5;margin-bottom:17px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:11px}.field{display:flex;flex-direction:column;gap:7px;margin-top:12px}label{font-size:11px;font-weight:850;letter-spacing:.06em;text-transform:uppercase;color:#b8c2c7}input,textarea,select{width:100%;border:1px solid rgba(255,255,255,.11);background:#080b0d;color:var(--text);border-radius:15px;padding:14px 15px;font:inherit;outline:none}input:focus,textarea:focus,select:focus{border-color:rgba(0,200,255,.66);box-shadow:0 0 0 3px rgba(0,200,255,.07)}textarea{min-height:170px;resize:vertical;line-height:1.55;font-size:16px}.answer-tools{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-top:10px}.voice{display:inline-flex;align-items:center;gap:8px}.mic{width:9px;height:9px;border-radius:50%;background:var(--cyan);box-shadow:0 0 10px var(--cyan)}.voice.on .mic{background:var(--green);box-shadow:0 0 12px var(--green)}.voice-status{font-size:11px;color:var(--muted)}.nav{display:flex;justify-content:space-between;gap:10px;margin-top:22px}.nav .right{display:flex;gap:9px}.error{color:#ff9bad;font-size:13px;margin-top:10px}.review{display:grid;gap:10px;margin-top:17px}.review-item{padding:14px;border:1px solid var(--line);background:#080b0d;border-radius:15px}.review-item b{display:block;color:#bcc7cc;font-size:11px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px}.review-item p{margin:0;white-space:pre-wrap;line-height:1.45}.success{text-align:center;padding:18px 0}.success .ok{width:70px;height:70px;border-radius:50%;display:grid;place-items:center;margin:0 auto 16px;border:1px solid rgba(200,255,0,.30);background:rgba(200,255,0,.08);color:var(--lime);font-size:31px}.success h2{font-size:clamp(30px,6vw,46px);margin:0 0 8px}.success p{color:var(--muted);line-height:1.5}.fine{font-size:11px;color:#748188;line-height:1.5;margin-top:17px}.footer{text-align:center;color:#5f6b71;font-size:10px;padding-top:18px}
+    @media(max-width:680px){.wrap{width:min(100% - 18px,860px);padding-top:11px}.brand span,.status{display:none}.hero{padding:25px 20px;border-radius:22px}.hero h1{font-size:44px}.card{padding:21px 17px;border-radius:21px}.grid{grid-template-columns:1fr}.q{font-size:30px}.nav{position:sticky;bottom:7px;padding-top:18px;background:linear-gradient(180deg,transparent,rgba(5,6,7,.96) 33%)}}
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <div class="brand"><div class="mark"></div><div><strong>ÓRBITA</strong><span>Founder Signal</span></div></div>
+    <div class="status">Formulario operativo</div>
+  </div>
+
+  <section id="intro" class="hero">
+    <div class="kicker">7 preguntas · ~5 minutos</div>
+    <h1>Tu red sabe más de lo que recordás.</h1>
+    <p class="lead">Estamos validando ÓRBITA, un agente de inteligencia relacional para founders. Queremos entender cómo gestionás hoy tu networking y dónde se te escapan oportunidades.</p>
+    <div class="chips"><span class="chip">Texto o voz</span><span class="chip">Sin respuestas correctas</span><span class="chip">Ejemplos reales > opiniones</span></div>
+    <div class="actions"><button class="primary" id="startBtn">Responder ahora →</button></div>
+    <p class="fine">Al final elegís si podemos contactarte o citar una frase. Tus datos no se publican.</p>
+  </section>
+
+  <section id="survey" class="survey hidden">
+    <div class="progress"><div class="track"><div id="bar" class="bar"></div></div><div id="count" class="count"></div></div>
+    <div id="card" class="card"></div>
+  </section>
+
+  <div class="footer">ÓRBITA · Relational Intelligence</div>
+</div>
+
+<script>
+const SUPABASE_URL='https://peiidzttvbomigpqsybm.supabase.co';
+const SUPABASE_ANON_KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBlaWlkenR0dmJvbWlncHFzeWJtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTA2MzA3OTksImV4cCI6MjEwNjIwNjc5OX0.4N5kEjcp08rmwTXZPFXGmOIiD5MRDM2dEVyMPhT9Z6U';
+
+const steps=[
+ {type:'profile',label:'Antes de empezar',title:'¿Quién está detrás de esta red?',helper:'Solo lo mínimo para entender tu contexto.'},
+ {key:'q1',label:'Pregunta 1',title:'Después de un evento, ¿qué hacés con toda la gente que conociste?',helper:'Contanos lo que hacés de verdad.'},
+ {key:'q2',label:'Pregunta 2',title:'Contame la última oportunidad que sentís que perdiste por no hacer seguimiento.',helper:'Cliente, inversor, talento, socio, intro o colaboración.'},
+ {key:'q3',label:'Pregunta 3',title:'Cuando necesitás un inversor, cliente, developer o socio, ¿cómo buscás entre la gente que ya conocés?',helper:'Queremos entender tu proceso actual, aunque sea informal.'},
+ {key:'q4',label:'Pregunta 4',title:'¿Dónde guardás hoy el contexto de las personas que conocés?',helper:'WhatsApp, LinkedIn, Notion, CRM, calendario, notas, tu cabeza...'},
+ {key:'q5',label:'Pregunta 5',title:'¿Qué parte de mantener tu networking te resulta más difícil?',helper:'Seguimiento, memoria, timing, priorizar, conectar personas u otra.'},
+ {key:'q6',label:'Pregunta 6',title:'Si una IA conociera toda tu red, ¿qué única pregunta le harías?',helper:'Escribila como se la preguntarías directamente.'},
+ {key:'q7',label:'Pregunta 7',title:'¿Qué tendría que hacer ÓRBITA para que lo uses después de esta hackathon?',helper:'¿Qué tendría que resolverte de verdad?'},
+ {type:'final',label:'Último paso',title:'¿Te gustaría seguir cerca de ÓRBITA?',helper:'Nos ayuda a separar interés real de una respuesta amable.'},
+ {type:'review',label:'Revisión',title:'Una última mirada.',helper:'Podés volver y editar antes de enviar.'}
+];
+
+const data={name:'',role:'',startup:'',contact:'',mode:'Texto',q1:'',q2:'',q3:'',q4:'',q5:'',q6:'',q7:'',try_mvp:'Quizás',can_contact:'No',quote_permission:'No',source:'ORBITA Founder Signal'};
+let index=0,recognition=null,usedVoice=false;
+
+const $=id=>document.getElementById(id);
+const esc=(s='')=>String(s).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]));
+$('startBtn').addEventListener('click',()=>{$('intro').classList.add('hidden');$('survey').classList.remove('hidden');render()});
+
+function nav(back=true,next=true){return '<div class="nav"><div>'+(back?'<button class="ghost" onclick="goBack()">← Atrás</button>':'')+'</div><div class="right">'+(next?'<button class="primary" onclick="goNext()">Continuar →</button>':'')+'</div></div>'}
+function progress(){const n=index+1;$('bar').style.width=((n/steps.length)*100)+'%';$('count').textContent=n+' / '+steps.length}
+function render(){
+ progress();const s=steps[index],c=$('card');
+ if(s.type==='profile'){c.innerHTML='<div class="step">'+s.label+'</div><div class="q">'+s.title+'</div><div class="helper">'+s.helper+'</div><div class="grid"><div class="field"><label>Nombre *</label><input id="name" value="'+esc(data.name)+'" placeholder="Tu nombre"></div><div class="field"><label>Rol *</label><input id="role" value="'+esc(data.role)+'" placeholder="Founder, CTO, Growth..."></div></div><div class="grid"><div class="field"><label>Startup / proyecto *</label><input id="startup" value="'+esc(data.startup)+'" placeholder="Nombre del proyecto"></div><div class="field"><label>Contacto opcional</label><input id="contact" value="'+esc(data.contact)+'" placeholder="Email, Telegram o LinkedIn"></div></div><div id="err" class="error"></div>'+nav(false,true);return}
+ if(s.type==='final'){c.innerHTML='<div class="step">'+s.label+'</div><div class="q">'+s.title+'</div><div class="helper">'+s.helper+'</div><div class="field"><label>¿Probarías el MVP?</label><select id="try_mvp"><option '+(data.try_mvp==='Sí'?'selected':'')+'>Sí</option><option '+(data.try_mvp==='Quizás'?'selected':'')+'>Quizás</option><option '+(data.try_mvp==='No'?'selected':'')+'>No</option></select></div><div class="grid"><div class="field"><label>¿Podemos contactarte?</label><select id="can_contact"><option '+(data.can_contact==='Sí'?'selected':'')+'>Sí</option><option '+(data.can_contact==='No'?'selected':'')+'>No</option></select></div><div class="field"><label>¿Podemos citar una frase tuya?</label><select id="quote_permission"><option '+(data.quote_permission==='No'?'selected':'')+'>No</option><option '+(data.quote_permission==='Sí, anónimo'?'selected':'')+'>Sí, anónimo</option><option '+(data.quote_permission==='Sí, con nombre'?'selected':'')+'>Sí, con nombre</option></select></div></div>'+nav(true,true);return}
+ if(s.type==='review'){const qs=steps.filter(x=>x.key);c.innerHTML='<div class="step">'+s.label+'</div><div class="q">'+s.title+'</div><div class="helper">'+s.helper+'</div><div class="review"><div class="review-item"><b>Founder</b><p>'+esc(data.name)+' · '+esc(data.role)+' · '+esc(data.startup)+'</p></div>'+qs.map((q,i)=>'<div class="review-item"><b>'+(i+1)+' · '+esc(q.title)+'</b><p>'+esc(data[q.key]||'—')+'</p></div>').join('')+'</div><div id="submitError" class="error"></div><div class="nav"><button class="ghost" onclick="goBack()">← Editar</button><div class="right"><button id="submitBtn" class="primary" onclick="submitAll()">Enviar respuestas →</button></div></div>';return}
+ const value=data[s.key]||'';c.innerHTML='<div class="step">'+s.label+'</div><div class="q">'+s.title+'</div><div class="helper">'+s.helper+'</div><textarea id="answer" placeholder="Un ejemplo concreto vale más que una respuesta perfecta.">'+esc(value)+'</textarea><div class="answer-tools"><button id="voiceBtn" class="secondary voice" onclick="toggleVoice(\''+s.key+'\')"><span class="mic"></span><span>Responder por voz</span></button><span id="voiceStatus" class="voice-status">Si tu navegador no admite voz, podés escribir.</span></div><div id="err" class="error"></div>'+nav(true,true)
+}
+function save(strict=true){const s=steps[index];if(s.type==='profile'){data.name=$('name').value.trim();data.role=$('role').value.trim();data.startup=$('startup').value.trim();data.contact=$('contact').value.trim();if(strict&&(!data.name||!data.role||!data.startup)){if($('err'))$('err').textContent='Completá nombre, rol y startup/proyecto.';return false}}else if(s.key){data[s.key]=$('answer').value.trim();if(strict&&!data[s.key]){if($('err'))$('err').textContent='Necesitamos una respuesta breve para continuar.';return false}}else if(s.type==='final'){['try_mvp','can_contact','quote_permission'].forEach(k=>data[k]=$(k).value)}data.mode=usedVoice?'Voz / mixto':'Texto';stopVoice();return true}
+function goNext(){if(!save(true))return;if(index<steps.length-1){index++;render();scrollTo({top:0,behavior:'smooth'})}}
+function goBack(){save(false);if(index>0){index--;render();scrollTo({top:0,behavior:'smooth'})}}
+function toggleVoice(key){const SR=window.SpeechRecognition||window.webkitSpeechRecognition;if(!SR){$('voiceStatus').textContent='La voz no está disponible en este navegador. Escribí tu respuesta.';return}if(recognition){stopVoice();return}usedVoice=true;recognition=new SR();recognition.lang='es-AR';recognition.continuous=false;recognition.interimResults=true;$('voiceBtn').classList.add('on');$('voiceStatus').textContent='Escuchando…';let finalText='';recognition.onresult=e=>{let interim='';for(let i=e.resultIndex;i<e.results.length;i++){const t=e.results[i][0].transcript;if(e.results[i].isFinal)finalText+=t+' ';else interim+=t}const base=data[key]?data[key].trim()+' ':'';$('answer').value=(base+finalText+interim).trim()};recognition.onerror=()=>{$('voiceStatus').textContent='No pude usar el micrófono. Podés seguir escribiendo.';stopVoice(false)};recognition.onend=()=>stopVoice(false);try{recognition.start()}catch(e){stopVoice(false)}}
+function stopVoice(stop=true){if(recognition){const r=recognition;recognition=null;if(stop)try{r.stop()}catch(e){}}const btn=$('voiceBtn');if(btn)btn.classList.remove('on')}
+function responseId(){try{return 'ORB-'+new Date().toISOString().replace(/\D/g,'').slice(0,14)+'-'+crypto.randomUUID().slice(0,8).toUpperCase()}catch(e){return 'ORB-'+Date.now()+'-'+Math.random().toString(36).slice(2,8).toUpperCase()}}
+async function submitAll(){const btn=$('submitBtn'),err=$('submitError');btn.disabled=true;btn.textContent='Guardando…';err.textContent='';const payload={...data,response_id:responseId(),user_agent:navigator.userAgent.slice(0,500),referrer:(document.referrer||'').slice(0,1000)};try{const r=await fetch(SUPABASE_URL+'/rest/v1/orbita_founder_signal_responses',{method:'POST',headers:{'Content-Type':'application/json','apikey':SUPABASE_ANON_KEY,'Authorization':'Bearer '+SUPABASE_ANON_KEY,'Prefer':'return=minimal'},body:JSON.stringify(payload)});if(!r.ok){throw new Error('HTTP '+r.status)}showSuccess(payload.response_id)}catch(e){console.error(e);err.textContent='No pudimos guardar la respuesta. Probá nuevamente o avisale a Iván. No cierres esta pantalla.';btn.disabled=false;btn.textContent='Enviar respuestas →'}}
+function showSuccess(id){$('card').innerHTML='<div class="success"><div class="ok">✓</div><h2>Gracias. Ya quedó guardado.</h2><p>Tu experiencia nos ayuda a construir ÓRBITA desde comportamientos reales.</p><p class="fine">ID: '+esc(id)+'</p></div>';$('bar').style.width='100%';$('count').textContent='Listo'}
+</script>
+</body>
+</html>
